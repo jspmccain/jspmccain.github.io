@@ -3,8 +3,8 @@ layout: post
 title: an introduction to de novo peptide sequencing
 permalink: /de-novo-seq/
 ---
-tl;dr: explanation of protein identification with mass spectrometry de novo (without a database)
 
+tl;dr: explanation of protein identification with mass spectrometry de novo (without a database)
 
 Proteins are the key functional components of all cells (i.e. the things that do things). To identify the amino acid sequence of proteins, the dominant player in the arena is Tandem Mass Spectrometry (aka MS/MS). MS/MS can break things up, and measure the broken parts weights.
 Identifying the sequence from a series of weight measurements (more accurately, mass to charge, m/z) is similar to the following problem:
