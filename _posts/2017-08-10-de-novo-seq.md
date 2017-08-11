@@ -1,6 +1,6 @@
 ---
 layout: post
-title: a gentle introduction to de novo peptide sequencing
+title: an introduction to de novo peptide sequencing
 permalink: /de-novo-seq/
 ---
 tl;dr: explanation of protein identification with mass spectrometry de novo (without a database)
