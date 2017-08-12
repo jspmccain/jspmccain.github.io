@@ -11,7 +11,7 @@ Identifying the sequence from a series of weight measurements (more accurately, 
 
 You have a watch (a protein), you smash it with a hammer (fragment the protein), and end up with a smattering of parts. It happens that you are only able to weigh the parts, ending up with a list of weights. From these weights, you have to figure out what brand and model the watch was. Fun!
 
-More accurately though, we typically examine peptides (chunk of a protein) rather than proteins, because peptides run through liquid chromatography more consistently and are easier to ionize (among other practical reasons). Every time you fragment a peptide, you end up with a "MS/MS" spectrum - you can think of it as a peptide signature. So what do we do with this peptide signature?
+More accurately though, we typically examine peptides (chunk of a protein) rather than proteins, because peptides run through liquid chromatography more consistently and are easier to ionize (among other practical reasons). Every time you fragment a peptide, you end up with a "MS/MS" spectrum - you can think of it as a peptide signature. So what do we do with this peptide signature? 
 
 One of two things - we can look for similar signatures in a database (aka "database search" or "spectral library search") and infer the peptide from how similar the signature is (ie with a scoring function). Another approach is to infer the peptide sequence from the signature (aka mass spectra) itself! Below is a schematic of the de novo sequencing problem:
 
