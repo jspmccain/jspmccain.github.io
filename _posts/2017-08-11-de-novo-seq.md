@@ -28,4 +28,5 @@ This is the basic premise of de novo peptide sequencing. There are many differen
 PepNovo is a great example of a *de novo* approach. The paper is quite technical, but I highly recommend spending some time with it. It's a very cool demonstration of the power of Probabilistic Graphical Models. I was originally going to try and summarize it in this post, but maybe I'll leave that to another time - we'll see if anybody ever reads this!
 
 [1] Marcotte, E. M. 2007. How do shotgun proteomics algorithms identify proteins? Nature biotechnology, 25: 755–757.
+
 [2] Frank, A., and Pevzner, P. 2005. PepNovo: De Novo Peptide Sequencing via Probabilistic Network Modeling. Analytical Chemistry, 77: 964–973.
