@@ -4,7 +4,7 @@ title: Workflow
 permalink: /workflow/
 ---
   
-I like thinking about workflow, a lot. I don't think people talk about it enough. So in an effort to discuss and improve my own workflow, below is a description of tools I'm actively using. If you have any suggestions, please let me know!
+I like thinking about workflow - I don't think people talk about it enough. So in an effort to discuss and improve my own workflow, below is a description of tools I'm actively using. If you have any suggestions, please let me know!
 
 ## Computing
 
