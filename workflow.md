@@ -8,7 +8,7 @@ I like thinking about workflow - I don't think people talk about it enough. So i
 
 ## Computing
 
-I use [R Studio](https://www.rstudio.com/) for working in [R](https://www.r-project.org/). In R, I am a fan of the [tidyverse](http://www.tidyverse.org/), although I typically use a mix of base R and tidyverse packages. Favourite R packages: [beepr](https://cran.r-project.org/web/packages/beepr/index.html), dplyr, ggplot2, and magrittr.
+I use [R Studio](https://www.rstudio.com/) for working in [R](https://www.r-project.org/). (But I don't use R projects because of [this](https://stackoverflow.com/questions/32982167/rstudio-project-cannot-find-the-file-specified-on-r-session-restart?noredirect=1&lq=1) syncing issue with Google Drive, if you have a fix for this please let me know!).  In R, I am a fan of the [tidyverse](http://www.tidyverse.org/), although I typically use a mix of base R and tidyverse packages. Favourite R packages: [beepr](https://cran.r-project.org/web/packages/beepr/index.html), dplyr, ggplot2, and magrittr.
 
 More and more I'm working in Python. I typically work in [Spyder](https://pythonhosted.org/spyder/), mainly because it was a smooth transition from R Studio. I've played around a bit with [Atom](https://atom.io/), but haven't made a switch.
 
