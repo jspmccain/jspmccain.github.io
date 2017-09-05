@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-My name is Scott McCain, I'm a PhD student with [Dr. Erin Bertrand](http://erinbertrand.blogspot.ca/) at Dalhousie University in the [Department of Biology](https://www.dal.ca/faculty/science/biology.html). 
+My name is Scott McCain, I'm a PhD student with [Dr. Erin Bertrand](http://erinbertrand.blogspot.ca/) at Dalhousie University in the [Department of Biology](https://www.dal.ca/faculty/science/biology.html).  
 
 I am broadly interested in how organisms interact and how they influence ecosystems. Specifically, I study microbes, and I'm currently using metaproteomics (and meta-transcriptomics/-genomics) to explore marine microbial community function. I'm ultimately interested in how microbes influence biogeochemical cycles.
 
