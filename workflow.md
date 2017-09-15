@@ -26,3 +26,6 @@ For posters and presentations I use powerpoint - I know there are alternatives, 
 
 This website was made based off of [Jekyll Now](https://github.com/barryclark/jekyll-now) and [GitHub pages](https://pages.github.com/).
 
+## Other
+
+I recently started using [Vimium](https://vimium.github.io/) for browsing efficiency - big fan.
