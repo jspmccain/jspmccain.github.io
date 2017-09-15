@@ -28,4 +28,4 @@ This website was made based off of [Jekyll Now](https://github.com/barryclark/je
 
 ## Other
 
-I recently started using [Vimium](https://vimium.github.io/) for browsing efficiency - big fan.
+I recently started using [Vimium](https://vimium.github.io/) for browsing efficiency - big fan of it.
