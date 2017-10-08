@@ -4,7 +4,7 @@ title: why is there so much volatility in single-player sport rankings?
 permalink: /single-player-ranking-volatility/
 ---
 
-tl;dr: how come single-player-sport rankings change so much?
+tl;dr: maybe just sampling error in small samples
 
 I had an interesting conversation about why there seems to be a lot of volatility in player rankings for tennis (compared to hockey/soccer/etc.). We wondered: is it all just a function of the number of players involved? Can the good hockey players average out the bad ones on a team, leading to more consistency of a teams performance? Given that I'm a fake statistician, I thought this question could be answered with some quick simulations.
 
