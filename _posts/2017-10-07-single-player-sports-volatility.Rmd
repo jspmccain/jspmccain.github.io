@@ -1,9 +1,7 @@
 ---
-title: "Why is there more volatility in single-player sports?"
-output:
-  html_document: default
-  html_notebook: default
-  pdf_document: default
+layout: post
+title: why is there more volatility in single-player sports?
+permalink: /single-player-sports-volatility/
 ---
 
 I had a an interesting conversation about why there seems to be lots of volatility in player rankings for tennis (compared to hockey/soccer/etc.). We wondered is it all just a function of the number of players involved? Can the good hockey players average out the bad ones in a game, leading to more consistency? Given that I'm a fake statistician, I thought this question could be answered with some quick simulations.
