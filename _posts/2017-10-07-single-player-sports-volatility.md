@@ -4,11 +4,11 @@ title: why is there more volatility in single-player sports?
 permalink: /single-player-sports-volatility/
 ---
 
-I had a an interesting conversation about why there seems to be lots of volatility in player rankings for tennis (compared to hockey/soccer/etc.). We wondered is it all just a function of the number of players involved? Can the good hockey players average out the bad ones in a game, leading to more consistency? Given that I'm a fake statistician, I thought this question could be answered with some quick simulations.
+I had a an interesting conversation about why there seems to be a lot of volatility in player rankings for tennis (compared to hockey/soccer/etc.). We wondered: is it all just a function of the number of players involved? Can the good hockey players average out the bad ones in a team, leading to more consistency? Given that I'm a fake statistician, I thought this question could be answered with some quick simulations.
 
 How about a team is made up of players, whose athletic ability can be summarized in a number (aka 'fitness' - thanks Sarah for the evolutionary terminology). This number is drawn from a distribution of average ability within the team and some deviation. The difference in the means of two teams governs who wins the game. In the following there is a distribution of players from two teams - red/blue:
 
-![](2017-10-07-single-player-sports-volatility_files/images/unnamed-chunk-1-1.png)
+![first plot](/images/unnamed-chunk-1-1.png)
 
 So in this one example it seems that the blue one wins and the red one loses. But we really wanted to know about volatility - on average, how often does the *better* team win?
 
@@ -66,7 +66,7 @@ So that seems like I was wrong! If we assume that the one player score, where ju
 
 What about the difference in magnitude of a win. Is the average difference between games higher when there are only two players?
 
-![](2017-10-07-single-player-sports-volatility_files/images/unnamed-chunk-4-1.png)
+![second plot](/images/unnamed-chunk-4-1.png)
 
 Aha! So the spread is way bigger for the tennis tournament. Maybe the simplification of assuming that if one score is larger than another leads to a win was a bad one. Or, maybe I don't like losing arguments and have gone down a serious [garden of forking paths](https://www.google.ca/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&cad=rja&uact=8&ved=0ahUKEwigkMXl8N_WAhVp7IMKHRq5B4oQFghEMAQ&url=http%3A%2F%2Fwww.stat.columbia.edu%2F~gelman%2Fresearch%2Funpublished%2Fp_hacking.pdf&usg=AOvVaw2yEx0yUehouqzqgpoRKtTO). Or better yet, maybe all of this is could be explained by some variation of the [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem). Who knows?
 
