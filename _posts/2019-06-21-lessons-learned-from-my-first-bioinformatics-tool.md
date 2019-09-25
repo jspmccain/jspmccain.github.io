@@ -5,7 +5,8 @@ permalink: /first-bioinformatics-tool/
 ---
 
 Erin and I have recently published a bioinformatics tool (called [*cobia*](https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.9b00144), please go check it out!), and then we used this tool to 
-examine the consequences of cofragmentation for metaproteomics. This project began around 2.5 years ago (near when I started in Erin's lab!), and has been an insane learning process. When I started this 'toy model', I knew pretty much nothing about mass spectrometry. In this post a want to give a brief, under the hood, description of how this project progressed and write out the lessons I've learned during the process.
+examine the consequences of cofragmentation for metaproteomics. This project began around 2.5 years ago (near when I started in Erin's lab!), and has been an insane learning process. When I started this 'toy model', I 
+knew pretty much nothing about mass spectrometry. In this post I want to give a brief, under the hood, description of how this project progressed and write out the lessons I've learned during the process.
 
 ## The lessons
 
@@ -19,7 +20,9 @@ examine the consequences of cofragmentation for metaproteomics. This project beg
 
 5) *Learn languages pragmatically* : I took a mini course on python programming a few years ago. I basically forgot everything afterwards besides some basic syntax. Only once I needed to learn python (based on available tools), did I really learn more about the language. More and more I see programming languages pragmatically (and spoken languages too, for that matter!)
 
-6) *Let dead ends go* : A big chunk of time was spent on versions of the model or different approaches. We had a whole other model that more accurately (but stochastically) represented a mass spec (by including something called TopN precursor picking, and dynamic exclusion), that never got into any draft. That specific model I spent around 2 months coding. In the end, thousands of lines of code didn't make it into the final product. For me this has been super tough, in some ways it feels like so much work was wasted. But in hindsight, each 'wasted' step taught me more about mass spectrometry, modelling, and science.
+6) *Let dead ends go* : A big chunk of time was spent on versions of the model or different approaches. We had a whole other model that more accurately (but stochastically) represented a mass spec (by including 
+something called TopN precursor picking, and dynamic exclusion), that never got into any draft. That specific model took around 2 months of coding. In the end, thousands of lines of code didn't make it into the final 
+product. For me this has been super tough, in some ways it feels like so much work was wasted. But in hindsight, each 'wasted' step taught me more about mass spectrometry, modelling, and science.
 
 ## The journey
 
@@ -33,12 +36,14 @@ Cool! It's now in Python, and we get some peptide specific scores for representi
 
 FEWF! Now we are moving! Start writing up to submit it somewhere?! ...but how have we validated our model. We make these scores, which we hypothesized would represent the type of bias we model, but do the scores actually mean anything in real metaproteomics experiments?
 
-This was when the real challenges came along. Cofragmentation is a tricky phenomenon to predict - there are many reasons why a peptide isn't observed in a sample, and these reasons are mostly difficult to distinguish. So we had to come up with way to validate our 
+This was when the real challenges came along. Cofragmentation is a tricky phenomenon to predict - there are many reasons why a peptide isn't observed in a sample, and these reasons are mostly difficult to distinguish. 
+So we had to come up with a way to validate our 
 scores - go see the paper for a more in depth description of how we did this, but the easily the biggest challenge was the re-analysis of previously published datasets. In the end, we have 8 different mass spectrometry experiments used for different validation 
 methods, with different retention time prediction methods. It was a lot of digging through supplementary materials of other papers!
 
-Lastly, one of the big parts of the journey was the review process. The reviewers from Journal of Proteome Research did an excellent job of thoroughly reading the paper - in the end, their comments significantly improved the paper content and how it's written. Review processes like these gives me some faith in the scientific process!
+Lastly, one of the big parts of the journey was the review process. The reviewers from Journal of Proteome Research did an excellent job of thoroughly reading the paper - in the end, their comments significantly improved the paper content and how it's written. Review processes like these give me some faith in the scientific process!
 
-Throughout, I've tried to actively read How-To guides for building bioinformatics tools. I've thought about: How can we make the tool more defensible? How can we make it accessible to proteomics researchers? What makes a bioinformatics tool more successful? (for me, ease of download plays a big role!) How can I write the code so others can adapt it for their use? Should the tool be one function, or a modular set of functions? (ended up doing the later because of the structure of Anv'io!). All of these questions shaped the current structure and function of *cobia*.
+Throughout, I've tried to actively read How-To guides for building bioinformatics tools. I've thought about: How can we make the tool more defensible? How can we make it accessible to proteomics researchers? What 
+makes a bioinformatics tool more successful? (for me, ease of download plays a big role!) How can I write the code so others can adapt it for their use? Should the tool be one function, or a modular set of functions? (ended up doing the latter because of the structure of Anv'io!). All of these questions shaped the current structure and function of *cobia*.
 
 Our tool is by no means perfect! But hopefully people find it useful, and they also find the conclusions we made with our tool helpful for their analyses!
