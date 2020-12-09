@@ -6,7 +6,7 @@ permalink: /about/
 
 My name is Scott McCain, I'm a PhD student with [Dr. Erin Bertrand](http://erinbertrand.blogspot.ca/) at Dalhousie University in the [Department of Biology](https://www.dal.ca/faculty/science/biology.html).  
 
-I am broadly interested in how microbial metabolism and how it connects with large-scale ocean processes. I've mostly studied surface-dwelling marine microbes (the green kind). I use a combination of *in situ* observations (metaproteomics and metatranscriptomics), and mathematical modelling, to explore how microbes do what they do.
+I am broadly interested in microbial metabolism: what are the organizing principles? What are the trade-offs? How does metabolism connect with large-scale ocean processes? I've mostly studied surface-dwelling marine microbes (the green kind). I use a combination of *in situ* observations (metaproteomics and metatranscriptomics), and mathematical modelling, to explore how microbes do what they do. Trace metals like iron and manganese have also been mostly the focus of my work during my PhD.
 
 A lot of my work focuses around an (incredible) instrument called a mass spectrometer (mostly of the Orbitrap variety). But I've found using published datasets to be very fruitful ([this paper](https://pubmed.ncbi.nlm.nih.gov/31483995/) of ours was entirely conducted on >10 previously published papers!). I also spend a considerable amount of time studying bias in observations, with a strong focus on metaproteomic observations.
 
