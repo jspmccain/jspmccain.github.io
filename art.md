@@ -6,8 +6,8 @@ permalink: /art/
 
 Here is some other stuff that I do:
 
-!(/images/grapes.png)
+![Grapes](images/grapes.png)
 
-!(/images/croissant.png)
+![Croissant](images/croissant.png)
 
-!(/images/tp.png)
+![TP](images/tp.png)
