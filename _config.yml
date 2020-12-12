@@ -72,6 +72,23 @@ kramdown:
 sass:
   style: :compressed # You might prefer to minify using :compressed
 
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true  # add comments to all blog posts
+      social-share: true # add social media sharing buttons to all blog posts
+  -
+    scope:
+      path: "" # all files
+    values:
+      layout: "page"
+      show-avatar: true
+
 # Use the following plug-ins
 gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
