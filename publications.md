@@ -6,7 +6,7 @@ permalink: /publications/
 
 An updated list of publications is available on [Google Scholar](https://scholar.google.ca/citations?user=kXQUQxEAAAAJ&hl=en), but please feel free to email me about questions or a PDF.
 
-10. L. Jabre*, C. Bannon*, _J.S.P. McCain_*, and Y. Eglit*. Ten simple rules for choosing a PhD supervisor. 2021. PLOS Computational Biology. *authors contributed equally
+10. L. Jabre\*, C. Bannon\*, __J.S.P. McCain__\*, and Y. Eglit\*. Ten simple rules for choosing a PhD supervisor. 2021. PLOS Computational Biology. \*authors contributed equally
 
 9. _J.S.P. McCain_, A.E. Allen, and E.M. Bertrand. Proteomic traits of marine microbes in an Antarctic phytoplankton bloom. 2021. The ISME Journal.
 
