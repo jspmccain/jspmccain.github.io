@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-My name is Scott McCain, I'm a postdoctoral associate with Dr. Gene-Wei Li at MIT in the Department of Biology. I'm studying how microbes optimize their resources using genetic and genomic approaches.
+My name is Scott McCain, I'm a postdoctoral associate with Dr. Gene-Wei Li at MIT in the Department of Biology. I'm studying how bacteria optimize their resource use using genetic and genomic approaches.
 
 I am broadly interested in what microbes are doing and why. To date, I've mostly studied photosynthetic, surface-dwelling ocean marine microbes. For my PhD, I used a combination of *in situ* observations (metaproteomics and metatranscriptomics), and mathematical modelling, to explore how microbes. My PhD was been centered on understanding how trace metals like iron and manganese influence microbial proteomes, and in turn, impact biogeochemical processes in the ocean. 
 
