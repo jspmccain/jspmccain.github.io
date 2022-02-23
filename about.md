@@ -4,9 +4,11 @@ title: About
 permalink: /about/
 ---
 
-My name is Scott McCain, I'm a postdoctoral associate with Dr. Gene-Wei Li at MIT in the Department of Biology (starting January 2022), studying how microbes are optimizing their proteomes, and why. I'll be using a combination of computational tools and genetic engineering to explore these questions with Gene.
+My name is Scott McCain, I'm a postdoctoral associate with Dr. Gene-Wei Li at MIT in the Department of Biology. I'm studying how microbes optimize their resources using genetic and genomic approaches.
 
-I am broadly interested in what microbes are doing and why they make their 'decisions'. To date, I've mostly studied photosynthetic, surface-dwelling ocean marine microbes. For my PhD, I used a combination of *in situ* observations (metaproteomics and metatranscriptomics), and mathematical modelling, to explore how microbes do what they do. My PhD was been centered on understanding how trace metals like iron and manganese influence microbial proteomes, and in turn, impact biogeochemical processes in the ocean. A lot of my work has used an (incredible) instrument called a mass spectrometer (mostly of the Orbitrap variety). But I've found using published datasets to be very fruitful ([this paper](https://pubmed.ncbi.nlm.nih.gov/31483995/) of ours was entirely conducted on data from >10 previously published papers!). I also spend a considerable amount of time studying bias in observations, with a strong focus on metaproteomic observations.
+I am broadly interested in what microbes are doing and why. To date, I've mostly studied photosynthetic, surface-dwelling ocean marine microbes. For my PhD, I used a combination of *in situ* observations (metaproteomics and metatranscriptomics), and mathematical modelling, to explore how microbes. My PhD was been centered on understanding how trace metals like iron and manganese influence microbial proteomes, and in turn, impact biogeochemical processes in the ocean. 
+
+A lot of my work has used mass spectrometry, but I've found using published datasets to be very fruitful ([this paper](https://pubmed.ncbi.nlm.nih.gov/31483995/) of ours was entirely conducted on data from >10 previously published papers!). I also spend a considerable amount of time studying bias in observations, with a strong focus on metaproteomic observations.
 
 I have diverse interests, and have also done some consulting work in the cannabis industry. I specifically worked on science communication challenges, translating research on cannabidiol efficacy, and assessing bioavailability of natural products.
 
