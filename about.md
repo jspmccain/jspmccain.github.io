@@ -6,7 +6,7 @@ permalink: /about/
 
 My name is Scott McCain, I'm a postdoctoral associate with Dr. Gene-Wei Li at MIT in the Department of Biology. I'm studying how bacteria optimize their resource use using genetic and genomic approaches.
 
-I am broadly interested in what microbes are doing and why. To date, I've mostly studied photosynthetic, surface-dwelling marine microbes. For my PhD, I used a combination of *in situ* observations (metaproteomics and metatranscriptomics), and mathematical modelling, to explore how microbes. My PhD was been centered on understanding how trace metals like iron and manganese influence microbial proteomes, and in turn, impact biogeochemical processes in the ocean. 
+I am broadly interested in what microbes are doing and why. To date, I've mostly studied photosynthetic, surface-dwelling marine microbes. For my PhD, I used a combination of *in situ* observations (metaproteomics and metatranscriptomics), and mathematical modelling, to explore how microbes behave. My PhD was been centered on understanding how trace metals like iron and manganese influence microbial proteomes, and in turn, impact biogeochemical processes in the ocean. 
 
 A lot of my work has used mass spectrometry, but I've found using published datasets to be very fruitful ([this paper](https://pubmed.ncbi.nlm.nih.gov/31483995/) of ours was entirely conducted on data from >10 previously published papers!). I also spend a considerable amount of time studying bias in observations, with a strong focus on metaproteomic observations.
 
