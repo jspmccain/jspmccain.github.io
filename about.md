@@ -4,7 +4,8 @@ title: About
 permalink: /about/
 ---
 
-My name is Scott McCain, I'm a postdoctoral associate with Dr. Gene-Wei Li at MIT in the Department of Biology. I'm studying bacteria using genetic and genomic approaches. I'm particularly interested in using bacteria as model systems to study gene expression and resource allocation.
+My name is Scott McCain, I'm a postdoctoral associate with Dr. Gene-Wei Li at MIT in the Department of Biology, and Dr. Mick Follows in the Department of Earth, Atmospheric, and Planetary Sciences. I'm studying bacteria using genetics and measurements of gene expression, in parallel with developing mathematical models of microbes. I'm particularly 
+interested in using bacteria as model systems to study gene expression and resource allocation.
 
 I am broadly interested in what microbes are doing and why. To date, I've mostly studied photosynthetic, surface-dwelling marine microbes. For my PhD, I used a combination of *in situ* observations (metaproteomics and metatranscriptomics), and mathematical modelling, to explore how microbes behave. My PhD was been centered on understanding how trace metals like iron and manganese influence microbial proteomes, and in turn, impact biogeochemical processes in the ocean. 
 
