@@ -4,11 +4,15 @@ title: About
 permalink: /about/
 ---
 
-My name is Scott McCain, I'm a postdoctoral associate with Dr. Gene-Wei Li at MIT in the Department of Biology. I also work closely with Dr. Mick Follows in the Department of Earth, Atmospheric, and 
-Planetary Sciences. I'm studying bacteria using genetics and measurements of gene expression, in parallel with developing mathematical models of microbes. I'm particularly 
-interested in using bacteria as model systems to study gene expression and resource allocation.
+My name is Scott McCain, I'm a Damon Runyon Postdoctoral Fellow, co-advised by Dr. Gene-Wei Li at MIT in the Department of Biology and Dr. Mick Follows in the Department of Earth, Atmospheric, and 
+Planetary Sciences. I am interested in how microbes live in the wild (from the gut to the deep ocean), and how they influence the environments they live in (from human 
+health to ocean biogeochemistry). I specifically 
+use a combination of 
+mathematical modelling, in situ observations, and culture-based experiments to tackle these broad questions. I'm particularly interested in connecting processes at the 
+level of gene expression to cellular and ecological outcomes.
 
-I am broadly interested in what microbes are doing and why. To date, I've mostly studied photosynthetic, surface-dwelling marine microbes. For my PhD, I used a combination of *in situ* observations (metaproteomics and metatranscriptomics), and mathematical modelling, to explore how microbes behave. My PhD was been centered on understanding how trace metals like iron and manganese influence microbial proteomes, and in turn, impact biogeochemical processes in the ocean. 
+During my PhD, I mostly studied photosynthetic, surface-dwelling marine microbes. I used a combination of *in situ* observations (metaproteomics and 
+metatranscriptomics), and mathematical modelling, to explore how microbes behave. My PhD was been centered on understanding how trace metals like iron and manganese influence microbial proteomes, and in turn, impact biogeochemical processes in the ocean. 
 
 A lot of my work has used mass spectrometry, but I've found using published datasets to be very fruitful ([this paper](https://pubmed.ncbi.nlm.nih.gov/31483995/) of ours was entirely conducted on data from >10 previously published papers!). I also spend a considerable amount of time studying bias in observations, with a strong focus on metaproteomic observations.
 
