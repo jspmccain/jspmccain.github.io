@@ -4,7 +4,8 @@ title: the journey and lessons from my first bioinformatics tool
 permalink: /first-bioinformatics-tool/
 ---
 
-Erin and I have recently published a bioinformatics tool (called [*cobia*](https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.9b00144), please go check it out!), and then we used this tool to 
+2019-06-21; Erin and I have recently published a bioinformatics tool (called [*cobia*](https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.9b00144), please 
+go check it out!), and then we used this tool to 
 examine the consequences of cofragmentation for metaproteomics. This project began around 2.5 years ago (near when I started in Erin's lab!), and has been an insane learning process. When I started this 'toy model', I 
 knew pretty much nothing about mass spectrometry. In this post I want to give a brief, under the hood, description of how this project progressed and write out the lessons I've learned during the process.
 
