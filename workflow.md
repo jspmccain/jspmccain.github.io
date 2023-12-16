@@ -29,7 +29,7 @@ probability theory (and all his other topics as well!) from [3Blue1Brown](https:
 
 ## Research
 
-I use [Zotero](https://www.zotero.org/). I mostly write with LateX, and so I export the bibtex file from Zotero, but Zotero does most of the organizing information etc.
+I use [Zotero](https://www.zotero.org/). I sometimes write with LateX, and so I export the bibtex file from Zotero, but Zotero does most of the organizing information etc.
 
 My favourite way to write is using a Google Doc. In grad school I would write the text in LateX (as if it were to appear in a LaTeX editor), but edit it as a normal google doc. This makes revisions 
 easy with co-authors. Only until the final stages do I switch it over to compiling in 
