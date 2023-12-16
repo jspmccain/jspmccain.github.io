@@ -6,7 +6,7 @@ permalink: /about/
 
 My name is Scott McCain, I'm a Damon Runyon Postdoctoral Fellow, co-advised by Dr. Gene-Wei Li at MIT in the Department of Biology and Dr. Mick Follows in 
 the Department of Earth, Atmospheric, and Planetary Sciences. I am interested in how microbes can transform the environments they live in (from inside 
-the human gut, to large-scale ocean processes), and why evolution has arrived at these range of microbial behaviours. I specifically use a combination of 
+the human gut, to large-scale ocean processes) and how to model these complex processes. I specifically use a combination of 
 mathematical modelling, *in situ* observations of gene expression in complex communities (metatranscriptomics and metaproteomics), and culture-based 
 experiments using model (and non-model!) bacteria to tackle these questions. I'm particularly interested in connecting processes at the 
 level of gene expression to cellular and ecological outcomes.
