@@ -24,6 +24,9 @@ I use Git and GitHub as version control via Git bash.
 
 For making things fast (enough), I typically rely on the wizardy of [Numba](https://numba.pydata.org/).
 
+For fitting Bayesian models, I like [Stan](https://mc-stan.org/). For understanding how Bayesian models are fit, I like [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/); 
+probability theory (and all his other topics as well!) from [3Blue1Brown](https://www.youtube.com/@3blue1brown), and this [fun blog](https://statmodeling.stat.columbia.edu/) from Gelman and others.
+
 ## Research
 
 I use [Zotero](https://www.zotero.org/). I mostly write with LateX, and so I export the bibtex file from Zotero, but Zotero does most of the organizing information etc.
@@ -40,6 +43,9 @@ I like to write things down, and for that I use [Leuchtturm](https://www.leuchtt
 For posters and presentations I use powerpoint - I know there are alternatives, but these have been sufficient so far! Suggestions very welcome.
 
 This website was made based off of [Jekyll Now](https://github.com/barryclark/jekyll-now) and [GitHub pages](https://pages.github.com/).
+
+For benchwork, I watch a lot of YouTube tutorials. I like [AddGene](https://www.addgene.org/protocols/) protocols a lot, with their associated videos! I also have found the reddit thread /labrats to 
+be hilariously helpful. The [Barrick Lab website](https://barricklab.org/twiki/bin/view/Lab/ProtocolList) has a bunch of well-described protocols that are super helpful. 
 
 ## Organizational
 
