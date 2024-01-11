@@ -24,8 +24,8 @@ I use Git and GitHub as version control via Git bash.
 
 For making things fast (enough), I typically rely on the wizardy of [Numba](https://numba.pydata.org/).
 
-For fitting Bayesian models, I like [Stan](https://mc-stan.org/). For understanding how Bayesian models are fit, I like [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/); 
-probability theory (and all his other topics as well!) from [3Blue1Brown](https://www.youtube.com/@3blue1brown), and this [fun blog](https://statmodeling.stat.columbia.edu/) from Gelman and others.
+For fitting Bayesian models, I like [Stan](https://mc-stan.org/). On that note, I like this [fun 
+blog](https://statmodeling.stat.columbia.edu/) from Gelman and others.
 
 ## Research
 
