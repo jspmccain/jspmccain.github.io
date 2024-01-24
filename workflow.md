@@ -25,7 +25,7 @@ I use Git and GitHub as version control via Git bash.
 For making things fast (enough), I typically rely on the wizardy of [Numba](https://numba.pydata.org/).
 
 For fitting Bayesian models, I like [Stan](https://mc-stan.org/). On that note, I like this [fun 
-blog](https://statmodeling.stat.columbia.edu/) from Gelman and others.
+blog](https://statmodeling.stat.columbia.edu/) from Gelman, and others.
 
 ## Research
 
