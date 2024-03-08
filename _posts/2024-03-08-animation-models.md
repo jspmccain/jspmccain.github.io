@@ -72,8 +72,7 @@ Anticipation
 Should certain models be considered better because they are more 
 aesthetic? What does it mean for a model to be more aesthetic? I’ve heard 
 that in math, some people strongly prefer elegant or beautiful proofs 
-(e.g., [this paper] 
-(https://www.ams.org/journals/bull/2007-44-04/S0273-0979-07-01168-8/S0273-0979-07-01168-8.pdf)). 
+(e.g., [this paper](https://www.ams.org/journals/bull/2007-44-04/S0273-0979-07-01168-8/S0273-0979-07-01168-8.pdf)). 
 I think this is just unavoidable in some ways. A simpler model, that 
 achieves the same thing as a more complicated model, might be considered 
 more aesthetic (?). But if it’s simpler, by definition, it should be more 
