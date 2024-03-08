@@ -1,3 +1,9 @@
+---
+layout: post
+title: animation is like modelling biology
+permalink: /animation-models/
+---
+
 Disney’s [“Twelve basic principles of 
 animation”](https://en.wikipedia.org/wiki/Twelve_basic_principles_of_animation) 
 outline the basic characteristics of good animation. 
