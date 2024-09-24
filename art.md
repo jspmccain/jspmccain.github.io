@@ -18,7 +18,7 @@ A conceptual diagram of our paper examining [proteomic traits in marine microbes
 
 Water colour w/ pen.
 
-![sunset](/images/IMG_6260.svg)
+![sunset](/images/IMG_6260.png)
 
 ![Grapes](/images/grapes.png)
 
