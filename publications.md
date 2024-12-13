@@ -6,8 +6,15 @@ permalink: /publications/
 
 An updated list of publications is available on [Google Scholar](https://scholar.google.ca/citations?user=kXQUQxEAAAAJ&hl=en), but please feel free to email me about questions or a PDF.
 
+16. __J.S.P. McCain__, G.L. Britten, S. Hackett, M.J. Follows, G.-W. Li. Microbial reaction rate estimation using proteins and proteomes. (In revision).
+
+15. 15. C. Eich, M. van Manen, __J.S.P. McCain__, L.J. Jabre, W.H. van de Poll, J. Jung, S.B.E.H. Pont, H-A. Tian, I. Ardiningsih, G-J. Reichart, E.M. Bertrand, C.P.D. Brussaard, R. Middag. 
+Temperature-enhanced effects of iron on Southern Ocean phytoplankton. Biogeosciences. 21 (20), 4637-4663.
+
+14.__J.S.P. McCain__. Mapping combinatorial gene expression perturbations to growth in Escherichia coli. 2023. Cell Systems. 15 (2) 106-108.
+
 13. M.A. Saito, (17 others), __J.S.P. McCain__, (22 others). Results from a Multi-Laboratory Ocean Metaproteomic Intercomparison: Effects of LC-MS Acquisition and Data 
-Analysis Procedures. (in review)
+Analysis Procedures. 2024. Biogeosciences.
 
 12. N.M. Omar, O. Prasil, __J.S.P. McCain__, and D.A. Campbell. Diffusional Interactions among Marine Phytoplankton and Bacterioplankton: Modelling H2O2 as a Case 
 Study. 2022. Microorganisms.
