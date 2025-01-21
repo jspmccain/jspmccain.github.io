@@ -6,7 +6,9 @@ permalink: /publications/
 
 An updated list of publications is available on [Google Scholar](https://scholar.google.ca/citations?user=kXQUQxEAAAAJ&hl=en), but please feel free to email me about questions or a PDF.
 
-16. __J.S.P. McCain__, G.L. Britten, S. Hackett, M.J. Follows, G.-W. Li. Microbial reaction rate estimation using proteins and proteomes. (In revision).
+16. __J.S.P. McCain__, G.L. Britten, S.R. Hackett, M.J. Follows, G.-W. Li. 
+Microbial reaction rate estimation using proteins and proteomes. (In 
+press, The ISME Journal).
 
 15. C. Eich, M. van Manen, __J.S.P. McCain__, L.J. Jabre, W.H. van de Poll, J. Jung, S.B.E.H. Pont, H-A. Tian, I. Ardiningsih, G-J. Reichart, E.M. Bertrand, C.P.D. Brussaard, R. Middag. 
 Temperature-enhanced effects of iron on Southern Ocean phytoplankton. Biogeosciences. 21 (20), 4637-4663.
