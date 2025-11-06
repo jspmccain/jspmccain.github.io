@@ -4,8 +4,10 @@ title: About
 permalink: /about/
 ---
 
-My name is Scott McCain, I'm a Damon Runyon Postdoctoral Fellow, co-advised by Dr. Gene-Wei Li at MIT in the Department of Biology and Dr. Mick Follows in 
-the Department of Earth, Atmospheric, and Planetary Sciences. I am interested in how microbes can transform the environments they live in (from inside 
+Hi! I'm Scott. I'm currently a Damon Runyon Postdoctoral Fellow. I held my fellowship for three years at MIT, co-advised by Dr. Gene-Wei Li in the Department of Biology and Dr. Mick Follows in 
+the Department of Earth, Atmospheric, and Planetary Sciences. Recently, I moved to the University of Toronto, working with Dr. Gary Bader in Molecular Genetics to learn more about physics-informed machine learning and bacterial biophysics. 
+
+Broadly, I am interested in how microbes can transform the environments they live in (from inside 
 the human gut, to large-scale ocean processes) and how to model these complex processes. I specifically use a combination of 
 mathematical modelling, *in situ* observations of gene expression in complex communities (metatranscriptomics and metaproteomics), and culture-based 
 experiments using model (and non-model!) bacteria to tackle these questions. I'm particularly interested in connecting processes at the 
