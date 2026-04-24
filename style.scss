@@ -294,7 +294,9 @@ footer {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;      /* This pushes it behind your text */
-  opacity: 0.08;    /* Makes it subtle so you can still read your posts */
-  pointer-events: none; /* Allows users to click "through" it to your links */
+  z-index: -1;
+  opacity: 0.2; /* Slightly higher because we will use softer colors */
+  filter: blur(1px); /* This blends the tiny boxes into a fluid texture */
+  pointer-events: none;
 }
+

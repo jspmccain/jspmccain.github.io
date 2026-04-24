@@ -20,20 +20,26 @@ function buildGrid() {
 }
 
 function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // Instead of ctx.clearRect, we draw a faint rectangle over everything
+  // This creates the "fade" or "trail" effect
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.15)'; // Match your background color
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
   
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       if (grid[i][j]) {
-        ctx.fillStyle = '#4a90e2'; // Matches typical scientific plotting blues
-        ctx.fillRect(i * resolution, j * resolution, resolution - 1, resolution - 1);
+        ctx.fillStyle = '#4a90e2'; 
+        // Use a circle instead of a square for a more organic feel
+        ctx.beginPath();
+        ctx.arc(i * resolution, j * resolution, resolution / 2, 0, 2 * Math.PI);
+        ctx.fill();
       }
     }
   }
   
   grid = nextGen();
-  // Slow down the "evolution" for a calmer background
-  setTimeout(() => requestAnimationFrame(draw), 150); 
+  // Remove the setTimeout to let it run at 60fps for maximum fluidity
+  requestAnimationFrame(draw); 
 }
 
 function nextGen() {
