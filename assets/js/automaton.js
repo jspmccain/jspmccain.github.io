@@ -1,7 +1,7 @@
 const canvas = document.getElementById('automaton-canvas');
 const ctx = canvas.getContext('2d');
 
-let resolution = 15; // Size of the "cells"
+let resolution = 5; // Size of the "cells"
 let grid;
 let cols, rows;
 
@@ -33,7 +33,7 @@ function draw() {
   
   grid = nextGen();
   // Slow down the "evolution" for a calmer background
-  setTimeout(() => requestAnimationFrame(draw), 100); 
+  setTimeout(() => requestAnimationFrame(draw), 150); 
 }
 
 function nextGen() {
