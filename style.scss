@@ -287,3 +287,14 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+
+#automaton-canvas {
+  position: fixed;
+ o top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;      /* This pushes it behind your text */
+  opacity: 0.15;    /* Makes it subtle so you can still read your posts */
+  pointer-events: none; /* Allows users to click "through" it to your links */
+}
