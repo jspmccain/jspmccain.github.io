@@ -296,7 +296,7 @@ footer {
   height: 100vh;
   z-index: -1;
   opacity: 0.2; /* Slightly higher because we will use softer colors */
-  filter: blur(1px); /* This blends the tiny boxes into a fluid texture */
+  filter: blur(2px); /* This blends the tiny boxes into a fluid texture */
   pointer-events: none;
 }
 
