@@ -5,7 +5,7 @@ let resolution = 5;
 let grid;
 let cols, rows;
 let frameCount = 0;
-const speedGovernor = 5; // Higher = Slower evolution. Try 5 to 10.
+const speedGovernor = 30; // Higher = Slower evolution. Try 5 to 10.
 
 function setup() {
   canvas.width = window.innerWidth;
