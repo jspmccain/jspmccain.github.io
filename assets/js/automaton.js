@@ -1,11 +1,16 @@
 const canvas = document.getElementById('automaton-canvas');
 const ctx = canvas.getContext('2d');
 
-let resolution = 5; 
+let resolution = 6; 
 let grid;
 let cols, rows;
 let frameCount = 0;
-const speedGovernor = 10; // Higher = Slower evolution. Try 5 to 10.
+const speedGovernor = 4; // Slightly faster logic for smoother mouse interaction
+
+// Organic Tuning Parameters
+const initialSpawnChance = 0.05; // Much lower for a sparse look
+const birthChance = 0.02;       // Random spontaneous "mutations"
+const deathChance = 0.1;        // Natural decay to keep it from getting crowded
 
 function setup() {
   canvas.width = window.innerWidth;
@@ -18,27 +23,42 @@ function setup() {
 function buildGrid() {
   return new Array(cols).fill(null)
     .map(() => new Array(rows).fill(null)
-    .map(() => Math.floor(Math.random() * 2)));
+    .map(() => Math.random() < initialSpawnChance ? 1 : 0));
 }
 
+// Interaction: Seed life with the mouse
+window.addEventListener('mousemove', (e) => {
+  const mouseX = Math.floor(e.clientX / resolution);
+  const mouseY = Math.floor(e.clientY / resolution);
+  const radius = 3; // How many cells the cursor affects
+
+  for (let i = -radius; i <= radius; i++) {
+    for (let j = -radius; j <= radius; j++) {
+      let c = (mouseX + i + cols) % cols;
+      let r = (mouseY + j + rows) % rows;
+      if (Math.random() < 0.5) grid[c][r] = 1;
+    }
+  }
+});
+
 function draw() {
-  // 1. The Visual Fade (Runs every frame for smoothness)
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.05)'; // Lowered alpha for longer, slower trails
+  // Fade effect for trails
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'; 
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       if (grid[i][j]) {
-        ctx.fillStyle = '#4a90e2'; 
+        // Varying alpha based on neighbors for a soft, "fuzzy" look
+        ctx.fillStyle = `rgba(74, 144, 226, ${Math.random() * 0.5 + 0.2})`; 
         ctx.beginPath();
-        // Drawing slightly smaller circles makes it look less crowded
-        ctx.arc(i * resolution, j * resolution, resolution / 3, 0, 2 * Math.PI);
+        // Smaller circles for a more refined, sparse appearance
+        ctx.arc(i * resolution, j * resolution, resolution / 4, 0, 2 * Math.PI);
         ctx.fill();
       }
     }
   }
   
-  // 2. The Logical Evolution (Only runs every X frames)
   if (frameCount % speedGovernor === 0) {
     grid = nextGen();
   }
@@ -53,8 +73,18 @@ function nextGen() {
     for (let j = 0; j < rows; j++) {
       let neighbors = countNeighbors(grid, i, j);
       let state = grid[i][j];
-      if (state === 0 && neighbors === 3) next[i][j] = 1;
-      else if (state === 1 && (neighbors < 2 || neighbors > 3)) next[i][j] = 0;
+
+      // Organic Logic: 
+      // Instead of rigid "3", we allow a range and add a tiny bit of entropy
+      if (state === 0) {
+        if (neighbors === 3 || Math.random() < birthChance) {
+          next[i][j] = 1;
+        }
+      } else {
+        if (neighbors < 2 || neighbors > 4 || Math.random() < deathChance) {
+          next[i][j] = 0;
+        }
+      }
     }
   }
   return next;
