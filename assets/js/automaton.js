@@ -2,10 +2,10 @@ const canvas = document.getElementById('automaton-canvas');
 const ctx = canvas.getContext('2d');
 
 let agents = [];
-const numAgents = 400; // Sparse: Keep this relatively low for a background
+const numAgents = 200; // Sparse: Keep this relatively low for a background
 const sensorAngle = Math.PI / 4; // 45 degrees
 const sensorDist = 20;
-const turnSpeed = 0.2;
+const turnSpeed = 0.4;
 const moveSpeed = 1.5;
 
 function setup() {
