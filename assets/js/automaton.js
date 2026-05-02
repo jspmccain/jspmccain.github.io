@@ -1,120 +1,91 @@
 const canvas = document.getElementById('automaton-canvas');
 const ctx = canvas.getContext('2d');
 
-let resolution = 6; 
-let grid;
-let cols, rows;
-let frameCount = 0;
-const speedGovernor = 4; // Slightly faster logic for smoother mouse interaction
-
-// Add these to your top-level variables
-const activeZoneRadius = 0.1; // 30% of the screen width
-const spawnProbability = 0.05;
-
-// Organic Tuning Parameters
-const initialSpawnChance = 0.05; // Much lower for a sparse look
-const birthChance = 0.02;       // Random spontaneous "mutations"
-const deathChance = 0.1;        // Natural decay to keep it from getting crowded
+let agents = [];
+const numAgents = 400; // Sparse: Keep this relatively low for a background
+const sensorAngle = Math.PI / 4; // 45 degrees
+const sensorDist = 20;
+const turnSpeed = 0.2;
+const moveSpeed = 1.5;
 
 function setup() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  cols = Math.floor(canvas.width / resolution);
-  rows = Math.floor(canvas.height / resolution);
-  grid = buildGrid();
-}
-
-function buildGrid() {
-  return new Array(cols).fill(null)
-    .map(() => new Array(rows).fill(null)
-    .map(() => Math.random() < initialSpawnChance ? 1 : 0));
-}
-
-// Interaction: Seed life with the mouse
-window.addEventListener('mousemove', (e) => {
-  const mouseX = Math.floor(e.clientX / resolution);
-  const mouseY = Math.floor(e.clientY / resolution);
-  const radius = 3; // How many cells the cursor affects
-
-  for (let i = -radius; i <= radius; i++) {
-    for (let j = -radius; j <= radius; j++) {
-      let c = (mouseX + i + cols) % cols;
-      let r = (mouseY + j + rows) % rows;
-      if (Math.random() < 0.5) grid[c][r] = 1;
-    }
+  agents = [];
+  
+  // Initialize agents in a small central cluster
+  for (let i = 0; i < numAgents; i++) {
+    agents.push(new Agent());
   }
+  
+  // Initial clear to white
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+class Agent {
+  constructor() {
+    this.x = canvas.width / 2 + (Math.random() - 0.5) * 100;
+    this.y = canvas.height / 2 + (Math.random() - 0.5) * 100;
+    this.angle = Math.random() * Math.PI * 2;
+  }
+
+  update() {
+    // 1. Sensing: Check the trail "pheromones" (pixel brightness)
+    // For a simple JS version, we'll use a simplified random-walk with momentum
+    // to simulate foraging without a heavy per-pixel buffer calculation.
+    this.angle += (Math.random() - 0.5) * turnSpeed;
+
+    // 2. Movement
+    this.x += Math.cos(this.angle) * moveSpeed;
+    this.y += Math.sin(this.angle) * moveSpeed;
+
+    // 3. Boundary handling (Wrap around)
+    if (this.x < 0) this.x = canvas.width;
+    if (this.x > canvas.width) this.x = 0;
+    if (this.y < 0) this.y = canvas.height;
+    if (this.y > canvas.height) this.y = 0;
+  }
+
+  draw() {
+    // Draw the "trail" line
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(74, 144, 226, 0.2)'; // Sparse blue lines
+    ctx.lineWidth = 0.5;
+    ctx.moveTo(this.x, this.y);
+    ctx.lineTo(this.x - Math.cos(this.angle) * 2, this.y - Math.sin(this.angle) * 2);
+    ctx.stroke();
+  }
+}
+
+// Interaction: Mouse acts as a "repellent" or "attractor"
+window.addEventListener('mousemove', (e) => {
+  agents.forEach(a => {
+    let dx = e.clientX - a.x;
+    let dy = e.clientY - a.y;
+    let dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < 100) {
+      // Repel: Turn away from mouse
+      let angleToMouse = Math.atan2(dy, dx);
+      a.angle += (a.angle - angleToMouse) * 0.1;
+    }
+  });
 });
 
-
-function draw() {
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'; 
+function animate() {
+  // Trail Decay: This creates the "organic" fading effect
+  // Change 0.02 to 0.01 for longer-lasting lines
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.02)'; 
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  
-  // Calculate center points
-  const centerX = cols / 2;
-  const centerY = rows / 2;
-  const maxDist = (cols * activeZoneRadius);
 
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      // Spatial Constraint: Only draw if within the radius
-      const dist = Math.sqrt((i - centerX)**2 + (j - centerY)**2);
-      
-      if (grid[i][j] && dist < maxDist) {
-        ctx.fillStyle = `rgba(74, 144, 226, ${0.4})`; 
-        ctx.beginPath();
-        ctx.arc(i * resolution, j * resolution, resolution / 4, 0, 2 * Math.PI);
-        ctx.fill();
-      }
-    }
-  }
-  
-  if (frameCount % speedGovernor === 0) {
-    grid = nextGen(centerX, centerY, maxDist);
-  }
-  
-  frameCount++;
-  requestAnimationFrame(draw); 
-}
+  agents.forEach(a => {
+    a.update();
+    a.draw();
+  });
 
-function nextGen(centerX, centerY, maxDist) {
-  let next = grid.map(arr => [...arr]);
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      const dist = Math.sqrt((i - centerX)**2 + (j - centerY)**2);
-      
-      // If outside the active zone, kill the cell immediately
-      if (dist > maxDist) {
-        next[i][j] = 0;
-        continue;
-      }
-
-      let neighbors = countNeighbors(grid, i, j);
-      let state = grid[i][j];
-
-      if (state === 0) {
-        if (neighbors === 3 || Math.random() < birthChance) next[i][j] = 1;
-      } else {
-        if (neighbors < 2 || neighbors > 4 || Math.random() < deathChance) next[i][j] = 0;
-      }
-    }
-  }
-  return next;
-}
-
-function countNeighbors(grid, x, y) {
-  let sum = 0;
-  for (let i = -1; i < 2; i++) {
-    for (let j = -1; j < 2; j++) {
-      let col = (x + i + cols) % cols;
-      let row = (y + j + rows) % rows;
-      sum += grid[col][row];
-    }
-  }
-  sum -= grid[x][y];
-  return sum;
+  requestAnimationFrame(animate);
 }
 
 window.addEventListener('resize', setup);
 setup();
-draw();
+animate();
