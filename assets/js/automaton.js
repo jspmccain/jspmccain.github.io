@@ -7,6 +7,10 @@ let cols, rows;
 let frameCount = 0;
 const speedGovernor = 4; // Slightly faster logic for smoother mouse interaction
 
+// Add these to your top-level variables
+const activeZoneRadius = 0.1; // 30% of the screen width
+const spawnProbability = 0.05;
+
 // Organic Tuning Parameters
 const initialSpawnChance = 0.05; // Much lower for a sparse look
 const birthChance = 0.02;       // Random spontaneous "mutations"
@@ -41,18 +45,24 @@ window.addEventListener('mousemove', (e) => {
   }
 });
 
+
 function draw() {
-  // Fade effect for trails
   ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'; 
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   
+  // Calculate center points
+  const centerX = cols / 2;
+  const centerY = rows / 2;
+  const maxDist = (cols * activeZoneRadius);
+
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
-      if (grid[i][j]) {
-        // Varying alpha based on neighbors for a soft, "fuzzy" look
-        ctx.fillStyle = `rgba(74, 144, 226, ${Math.random() * 0.5 + 0.2})`; 
+      // Spatial Constraint: Only draw if within the radius
+      const dist = Math.sqrt((i - centerX)**2 + (j - centerY)**2);
+      
+      if (grid[i][j] && dist < maxDist) {
+        ctx.fillStyle = `rgba(74, 144, 226, ${0.4})`; 
         ctx.beginPath();
-        // Smaller circles for a more refined, sparse appearance
         ctx.arc(i * resolution, j * resolution, resolution / 4, 0, 2 * Math.PI);
         ctx.fill();
       }
@@ -60,30 +70,32 @@ function draw() {
   }
   
   if (frameCount % speedGovernor === 0) {
-    grid = nextGen();
+    grid = nextGen(centerX, centerY, maxDist);
   }
   
   frameCount++;
   requestAnimationFrame(draw); 
 }
 
-function nextGen() {
+function nextGen(centerX, centerY, maxDist) {
   let next = grid.map(arr => [...arr]);
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
+      const dist = Math.sqrt((i - centerX)**2 + (j - centerY)**2);
+      
+      // If outside the active zone, kill the cell immediately
+      if (dist > maxDist) {
+        next[i][j] = 0;
+        continue;
+      }
+
       let neighbors = countNeighbors(grid, i, j);
       let state = grid[i][j];
 
-      // Organic Logic: 
-      // Instead of rigid "3", we allow a range and add a tiny bit of entropy
       if (state === 0) {
-        if (neighbors === 3 || Math.random() < birthChance) {
-          next[i][j] = 1;
-        }
+        if (neighbors === 3 || Math.random() < birthChance) next[i][j] = 1;
       } else {
-        if (neighbors < 2 || neighbors > 4 || Math.random() < deathChance) {
-          next[i][j] = 0;
-        }
+        if (neighbors < 2 || neighbors > 4 || Math.random() < deathChance) next[i][j] = 0;
       }
     }
   }
