@@ -1,86 +1,91 @@
 const canvas = document.getElementById('automaton-canvas');
 const ctx = canvas.getContext('2d');
 
-let agents = [];
-const numAgents = 200; // Sparse: Keep this relatively low for a background
-const sensorAngle = Math.PI / 4; // 45 degrees
-const sensorDist = 20;
-const turnSpeed = 0.4;
-const moveSpeed = 1.5;
+let particles = [];
+const numParticles = 80; // Sparse: lower count for a cleaner look
+const noiseScale = 0.005; // Lower = straighter lines; Higher = more turbulence
+const moveSpeed = 0.8;    // The "flow" velocity
+const trailOpacity = 0.01; // How quickly lines fade (0.01 is very slow/long trails)
 
 function setup() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  agents = [];
-  
-  // Initialize agents in a small central cluster
-  for (let i = 0; i < numAgents; i++) {
-    agents.push(new Agent());
+  particles = [];
+  for (let i = 0; i < numParticles; i++) {
+    particles.push(new Particle());
   }
-  
-  // Initial clear to white
+  // Start with a clean white slate
   ctx.fillStyle = 'white';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
-class Agent {
+class Particle {
   constructor() {
-    this.x = canvas.width / 2 + (Math.random() - 0.5) * 100;
-    this.y = canvas.height / 2 + (Math.random() - 0.5) * 100;
-    this.angle = Math.random() * Math.PI * 2;
+    this.init();
+  }
+
+  init() {
+    // Start at random positions
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.prevX = this.x;
+    this.prevY = this.y;
+    
+    // Life determines how long a thread grows before resetting
+    this.life = Math.random() * 300 + 100;
   }
 
   update() {
-    // 1. Sensing: Check the trail "pheromones" (pixel brightness)
-    // For a simple JS version, we'll use a simplified random-walk with momentum
-    // to simulate foraging without a heavy per-pixel buffer calculation.
-    this.angle += (Math.random() - 0.5) * turnSpeed;
+    this.prevX = this.x;
+    this.prevY = this.y;
 
-    // 2. Movement
-    this.x += Math.cos(this.angle) * moveSpeed;
-    this.y += Math.sin(this.angle) * moveSpeed;
+    // We simulate a Perlin-like flow using trigonometric functions
+    // This creates a smooth, curving "wind" field across the screen
+    let angle = (Math.sin(this.x * noiseScale) + Math.cos(this.y * noiseScale)) * Math.PI * 2;
+    
+    this.x += Math.cos(angle) * moveSpeed;
+    this.y += Math.sin(angle) * moveSpeed;
+    this.life--;
 
-    // 3. Boundary handling (Wrap around)
-    if (this.x < 0) this.x = canvas.width;
-    if (this.x > canvas.width) this.x = 0;
-    if (this.y < 0) this.y = canvas.height;
-    if (this.y > canvas.height) this.y = 0;
+    // Reset if it goes off screen or "dies"
+    if (this.life <= 0 || this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+      this.init();
+    }
   }
 
   draw() {
-    // Draw the "trail" line
     ctx.beginPath();
-    ctx.strokeStyle = 'rgba(74, 144, 226, 0.2)'; // Sparse blue lines
-    ctx.lineWidth = 0.5;
-    ctx.moveTo(this.x, this.y);
-    ctx.lineTo(this.x - Math.cos(this.angle) * 2, this.y - Math.sin(this.angle) * 2);
+    // Using a subtle blue-grey for a professional feel
+    ctx.strokeStyle = 'rgba(74, 144, 226, 0.1)'; 
+    ctx.lineWidth = 1;
+    ctx.moveTo(this.prevX, this.prevY);
+    ctx.lineTo(this.x, this.y);
     ctx.stroke();
   }
 }
 
-// Interaction: Mouse acts as a "repellent" or "attractor"
+// Interaction: Mouse disrupts the local flow
 window.addEventListener('mousemove', (e) => {
-  agents.forEach(a => {
-    let dx = e.clientX - a.x;
-    let dy = e.clientY - a.y;
+  particles.forEach(p => {
+    let dx = e.clientX - p.x;
+    let dy = e.clientY - p.y;
     let dist = Math.sqrt(dx * dx + dy * dy);
     if (dist < 100) {
-      // Repel: Turn away from mouse
-      let angleToMouse = Math.atan2(dy, dx);
-      a.angle += (a.angle - angleToMouse) * 0.1;
+      p.x += dx * 0.05; // Particles gently nudge away from mouse
+      p.y += dy * 0.05;
     }
   });
 });
 
 function animate() {
-  // Trail Decay: This creates the "organic" fading effect
-  // Change 0.02 to 0.01 for longer-lasting lines
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.02)'; 
+  // Instead of clearing, we draw a nearly transparent rectangle 
+  // to slowly "fade" older parts of the lines.
+  ctx.fillStyle = `rgba(255, 255, 255, ${trailOpacity})`;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  agents.forEach(a => {
-    a.update();
-    a.draw();
+  particles.forEach(p => {
+    p.update();
+    p.draw();
   });
 
   requestAnimationFrame(animate);
