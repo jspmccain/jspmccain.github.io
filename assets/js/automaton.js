@@ -2,8 +2,9 @@ const canvas = document.getElementById('automaton-canvas');
 const ctx = canvas.getContext('2d');
 
 let particles = [];
+let seedX, seedY, currentNoiseScale; // Variables for stochastic seeding
+
 const numParticles = 80; 
-const noiseScale = 0.005; 
 const moveSpeed = 0.8;    
 const trailOpacity = 0.01; 
 
@@ -15,7 +16,13 @@ function setup() {
   canvas.style.width = `${window.innerWidth}px`;
   canvas.style.height = `${window.innerHeight}px`;
   ctx.scale(dpr, dpr);
-  // ------------------------------
+
+  // --- Stochastic Seeding ---
+  // These move the "map" to a new random location every time you refresh
+  seedX = Math.random() * 1000;
+  seedY = Math.random() * 1000;
+  // Slightly randomize the "wiggliness" (0.003 to 0.007)
+  currentNoiseScale = 0.003 + Math.random() * 0.004;
 
   particles = [];
   for (let i = 0; i < numParticles; i++) {
@@ -36,14 +43,17 @@ class Particle {
     this.y = Math.random() * window.innerHeight;
     this.prevX = this.x;
     this.prevY = this.y;
-    this.life = Math.random() * 300 + 100;
+    // Randomized life creates asynchronous thread growth
+    this.life = Math.random() * 400 + 100;
   }
 
   update() {
     this.prevX = this.x;
     this.prevY = this.y;
 
-    let angle = (Math.sin(this.x * noiseScale) + Math.cos(this.y * noiseScale)) * Math.PI * 2;
+    // The seeds (seedX, seedY) ensure the flow field is unique per refresh
+    let angle = (Math.sin((this.x + seedX) * currentNoiseScale) + 
+                 Math.cos((this.y + seedY) * currentNoiseScale)) * Math.PI * 2;
     
     this.x += Math.cos(angle) * moveSpeed;
     this.y += Math.sin(angle) * moveSpeed;
@@ -56,15 +66,15 @@ class Particle {
 
   draw() {
     ctx.beginPath();
-    // DARKENED: Changed from light blue to a sharp dark charcoal grey
     ctx.strokeStyle = 'rgba(40, 40, 40, 0.4)'; 
-    ctx.lineWidth = 0.8; // Thinner lines often look sharper
+    ctx.lineWidth = 0.8; 
     ctx.moveTo(this.prevX, this.prevY);
     ctx.lineTo(this.x, this.y);
     ctx.stroke();
   }
 }
 
+// Interaction: Disruption
 window.addEventListener('mousemove', (e) => {
   particles.forEach(p => {
     let dx = e.clientX - p.x;
